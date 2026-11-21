@@ -33,4 +33,14 @@ public class Freelancer extends Funcionario {
     public double salarioLiquido() {
         return salarioBruto() - calculaImposto();
     }
+
+    @Override
+    public String holerite() {
+        return "Nome: " + nome + "\n"
+                + "Tipo: Freelancer\n"
+                + "Horas: " + horas + " x " + String.format("%.2f", valorHora) + "\n"
+                + "Bruto: " + String.format("%.2f", salarioBruto()) + "\n"
+                + "Descontos: " + String.format("%.2f", calculaImposto()) + "\n"
+                + "Liquido: " + String.format("%.2f", salarioLiquido());
+    }
 }

@@ -17,4 +17,6 @@ public abstract class Funcionario {
     public abstract double calculaImposto();
 
     public abstract double salarioLiquido();
+
+    public abstract String holerite();
 }

@@ -33,4 +33,14 @@ public class Estagiario extends Funcionario {
     public double salarioLiquido() {
         return bolsa + auxilioTransporte;
     }
+
+    @Override
+    public String holerite() {
+        return "Nome: " + nome + "\n"
+                + "Tipo: Estagiario\n"
+                + "Bruto: " + String.format("%.2f", salarioBruto()) + "\n"
+                + "Auxilio transporte: " + String.format("%.2f", auxilioTransporte) + "\n"
+                + "Descontos: " + String.format("%.2f", calculaImposto()) + "\n"
+                + "Liquido: " + String.format("%.2f", salarioLiquido());
+    }
 }

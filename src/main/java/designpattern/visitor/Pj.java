@@ -36,4 +36,13 @@ public class Pj extends Funcionario {
     public double salarioLiquido() {
         return valorNota - calculaImposto();
     }
+
+    @Override
+    public String holerite() {
+        return "Nome: " + nome + "\n"
+                + "Tipo: PJ (" + tipo + ")\n"
+                + "Bruto: " + String.format("%.2f", salarioBruto()) + "\n"
+                + "Descontos: " + String.format("%.2f", calculaImposto()) + "\n"
+                + "Liquido: " + String.format("%.2f", salarioLiquido());
+    }
 }

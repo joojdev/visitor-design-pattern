@@ -32,4 +32,13 @@ public class Clt extends Funcionario {
     public double salarioLiquido() {
         return salario - calculaImposto();
     }
+
+    @Override
+    public String holerite() {
+        return "Nome: " + nome + "\n"
+                + "Tipo: CLT\n"
+                + "Bruto: " + String.format("%.2f", salarioBruto()) + "\n"
+                + "Descontos: " + String.format("%.2f", calculaImposto()) + "\n"
+                + "Liquido: " + String.format("%.2f", salarioLiquido());
+    }
 }
