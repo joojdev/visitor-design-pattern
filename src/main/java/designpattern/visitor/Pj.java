@@ -23,4 +23,17 @@ public class Pj extends Funcionario {
     public double salarioBruto() {
         return valorNota;
     }
+
+    @Override
+    public double calculaImposto() {
+        if (tipo == TipoPj.MEI) {
+            return 80;
+        }
+        return valorNota * 0.06;
+    }
+
+    @Override
+    public double salarioLiquido() {
+        return valorNota - calculaImposto();
+    }
 }

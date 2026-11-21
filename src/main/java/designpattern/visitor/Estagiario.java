@@ -23,4 +23,14 @@ public class Estagiario extends Funcionario {
     public double salarioBruto() {
         return bolsa;
     }
+
+    @Override
+    public double calculaImposto() {
+        return 0;
+    }
+
+    @Override
+    public double salarioLiquido() {
+        return bolsa + auxilioTransporte;
+    }
 }

@@ -23,4 +23,14 @@ public class Freelancer extends Funcionario {
     public double salarioBruto() {
         return horas * valorHora;
     }
+
+    @Override
+    public double calculaImposto() {
+        return salarioBruto() * 0.05;
+    }
+
+    @Override
+    public double salarioLiquido() {
+        return salarioBruto() - calculaImposto();
+    }
 }
