@@ -2,6 +2,8 @@ package designpattern.visitor;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class FolhaPagamentoTest {
@@ -27,6 +29,18 @@ class FolhaPagamentoTest {
         String h = folha.holerites();
         assertTrue(h.contains("Joao"));
         assertTrue(h.contains("Carlos"));
+    }
+
+    @Test
+    void aplicaVisitorQualquer() {
+        FolhaPagamento folha = new FolhaPagamento();
+        folha.adiciona(new Clt("Joao", 2000));
+        folha.adiciona(new Estagiario("Ana", 1200, 200));
+
+        List<Double> impostos = folha.aplica(new ImpostoVisitor());
+        assertEquals(2, impostos.size());
+        assertEquals(220, impostos.get(0), 0.01);
+        assertEquals(0, impostos.get(1), 0.01);
     }
 
     @Test

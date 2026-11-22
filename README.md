@@ -16,6 +16,19 @@ As regras sao simplificadas, nao sao as tabelas reais.
 - `antes`: cada classe tem seus metodos de imposto, liquido e holerite
 - `depois`: mesma coisa usando Visitor
 
+## Visitor
+
+As classes de funcionario so guardam os dados (incluindo o salario bruto)
+e tem o metodo `accept`.
+Cada calculo fica num visitor separado:
+
+- `ImpostoVisitor`
+- `SalarioLiquidoVisitor`
+- `HoleriteVisitor`
+
+Pra criar um calculo novo (ex: bonus) basta criar outro visitor,
+sem mexer nas classes de funcionario.
+
 ## Rodar
 
 ```
