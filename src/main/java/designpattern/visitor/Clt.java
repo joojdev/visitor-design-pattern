@@ -1,12 +1,18 @@
 package designpattern.visitor;
 
-public class Clt extends Funcionario {
+public class Clt implements Funcionario {
 
+    private String nome;
     private double salario;
 
     public Clt(String nome, double salario) {
-        super(nome);
+        this.nome = nome;
         this.salario = salario;
+    }
+
+    @Override
+    public String getNome() {
+        return nome;
     }
 
     public double getSalario() {
@@ -16,30 +22,6 @@ public class Clt extends Funcionario {
     @Override
     public double salarioBruto() {
         return salario;
-    }
-
-    @Override
-    public double calculaImposto() {
-        double inss = salario * 0.11;
-        double ir = 0;
-        if (salario > 3000) {
-            ir = salario * 0.075;
-        }
-        return inss + ir;
-    }
-
-    @Override
-    public double salarioLiquido() {
-        return salario - calculaImposto();
-    }
-
-    @Override
-    public String holerite() {
-        return "Nome: " + nome + "\n"
-                + "Tipo: CLT\n"
-                + "Bruto: " + String.format("%.2f", salarioBruto()) + "\n"
-                + "Descontos: " + String.format("%.2f", calculaImposto()) + "\n"
-                + "Liquido: " + String.format("%.2f", salarioLiquido());
     }
 
     @Override

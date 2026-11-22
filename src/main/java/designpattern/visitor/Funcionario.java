@@ -1,24 +1,10 @@
 package designpattern.visitor;
 
-public abstract class Funcionario {
+public interface Funcionario {
 
-    protected String nome;
+    String getNome();
 
-    public Funcionario(String nome) {
-        this.nome = nome;
-    }
+    double salarioBruto();
 
-    public String getNome() {
-        return nome;
-    }
-
-    public abstract double salarioBruto();
-
-    public abstract double calculaImposto();
-
-    public abstract double salarioLiquido();
-
-    public abstract String holerite();
-
-    public abstract <T> T accept(FuncionarioVisitor<T> visitor);
+    <T> T accept(FuncionarioVisitor<T> visitor);
 }
