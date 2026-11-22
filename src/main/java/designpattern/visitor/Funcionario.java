@@ -19,4 +19,6 @@ public abstract class Funcionario {
     public abstract double salarioLiquido();
 
     public abstract String holerite();
+
+    public abstract <T> T accept(FuncionarioVisitor<T> visitor);
 }

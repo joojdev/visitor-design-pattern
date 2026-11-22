@@ -45,4 +45,9 @@ public class Pj extends Funcionario {
                 + "Descontos: " + String.format("%.2f", calculaImposto()) + "\n"
                 + "Liquido: " + String.format("%.2f", salarioLiquido());
     }
+
+    @Override
+    public <T> T accept(FuncionarioVisitor<T> visitor) {
+        return visitor.visitPj(this);
+    }
 }
